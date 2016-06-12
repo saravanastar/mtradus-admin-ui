@@ -1,0 +1,24 @@
+{
+  "name": "imgLiquid",
+  "main": "js/imgLiquid.js",
+  "dependencies": {
+    "jquery": ">=1.8.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components",
+    "tests",
+    "examples"
+  ],
+  "homepage": "https://github.com/macdigger/imgLiquid",
+  "_release": "02ebfdf9e9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "updateonresize",
+    "commit": "02ebfdf9e9971cb655ed7d717f429e4698b87bd9"
+  },
+  "_source": "https://github.com/macdigger/imgLiquid.git",
+  "_target": "updateonresize",
+  "_originalSource": "https://github.com/macdigger/imgLiquid.git"
+}
