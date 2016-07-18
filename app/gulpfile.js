@@ -31,7 +31,7 @@ var gulp     = require('gulp'),
 	        pad(date.getSeconds());
 	}
 
-  var baseContext = '/';
+  var baseContext = '/static';
 	var appVersion = getReleaseVersion();
 // 2. SETTINGS VARIABLES
 // - - - - - - - - - - - - - - -
@@ -39,7 +39,7 @@ var gulp     = require('gulp'),
   var paths = {
 		    styles: ['src/scss'],
 		    images: ['src/assets/img'],
-		    fonts: ['src/assets/fonts']
+		    fonts: ['src/assets/fonts','font/material-design-icons']
 		  },
 		  bases = {
 		    src: 'src/',
@@ -74,10 +74,35 @@ var gulp     = require('gulp'),
 	    .pipe($.concat('app.js'))
 	    .pipe($.rename({ suffix: '.min' }))
 //	    .pipe($.uglify())
+		.pipe(replace({
+			      patterns: [
+			        {
+			          match: 'v',
+			          replacement: appVersion
+			        },
+			        {
+			          match: 'cxt',
+			          replacement: baseContext
+			        }
+			      ]
+			    }))
 	    .pipe(gulp.dest('dist/scripts'))
 	    .pipe($.notify({ message: 'Scripts task complete' }));
 	});
   
+
+  gulp.task('fonts', function() {
+	  return gulp.src('src/font/**/*')
+	    //.pipe($.sass({ style: 'expanded', }))
+	    //.pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+	    //.pipe(gulp.dest('dist/css'))
+	    //.pipe($.rename({ suffix: '.min' }))
+	   // .pipe($.minifycss())
+	   // .pipe(livereload(server))
+	    .pipe(gulp.dest('dist/fonts/'))
+	    .pipe($.notify({ message: 'Font task complete' }));
+	});
+
   gulp.task('libraries',['clean'], function() {
 	  return gulp.src(libraries)
 	    .pipe(concat('vendor.js'))
@@ -119,14 +144,14 @@ var gulp     = require('gulp'),
 	});
   
   gulp.task('copy', function() {
-	  sequence(['copy:assets', 'copy:html'], function() {
+	  sequence(['copy:assets', 'copy:html', 'copy:css'], function() {
 	    console.log("Copy Complete!");
 	  });
 	});
 
 	// Copy assets to the dist directory
 	gulp.task('copy:assets', function () {
-	  return gulp.src(['assets/**/*'])
+	  return gulp.src(['src/assets/**/*'])
 	   .pipe(replace({
 	      patterns: [
 	        {
@@ -138,15 +163,26 @@ var gulp     = require('gulp'),
 	    .pipe(gulp.dest(bases.dist + 'assets/'));
 
 	});
+	gulp.task('copy:css', function() {
+		return gulp.src(['src/css/**/*'])
+			.pipe(concat('vendor.css'))
+			.pipe(gulp.dest(bases.dist + 'css/'));
+	});
 	
   gulp.task('clean', function(cb) {
 	  rimraf(bases.dist, cb);
 	});
   
   gulp.task('build', function() {
-	  sequence('clean', ['copy:html', 'copy', 'libraries', 'scripts','styles'], function() {
+	  sequence('clean', ['copy:html', 'copy', 'libraries', 'scripts','fonts'], function() {
 	    console.log("Successfully Built!");
 	  });
 	});
+
+  gulp.task('watch', function() {
+    gulp.watch(['index.html','src/'+ '**/*.html'], ['copy:html']);
+    gulp.watch(['src/bootstrap/**/*.js','src/config/**/*.js','src/component/**/*.js'], ['scripts']);
+     
+});
   
   gulp.task('default', ['build']);
