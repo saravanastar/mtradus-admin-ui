@@ -1,24 +1,13 @@
 (function(){
- var app = angular.module("mtradus",['menu','ui.router','login',"dashBoard"]);
+ var app = angular.module("mtradus",['appUtils', 'menu','ui.router','login','dashBoard', 'topHeader']);
  app.config(function($stateProvider,$urlRouterProvider){
 	 $stateProvider.state('app',{
 		 abstract :  true,
-		 views : {
-			/* '' : {
-				 templateUrl : '/static/component/widget/dashboard/template/dashboard.html',
-				 controller : 'topHeaderController',
-				 controllerAs : 'topHeaderControllerVM'
-			 },*/
-			/* '' : {
-				 templateUrl : '@@cxt/component/widget/dashboard/template/dashboard.html',
-				 controller : 'dashBoardController',
-				 controllerAs : 'dashBoardControllerVM'
-			 },*/
-				 
+		 views : {			 
 			 'topheader@' : {
 				 templateUrl : '@@cxt/component/widget/top-header/template/top-header.html',
-				 /*controller : 'topHeaderController',
-				 controllerAs : 'topHeaderControllerVM'*/
+				 controller : 'topHeaderController as topHeaderControllerVm'
+				 
 			 },
 			 'hamburger@' : {
 				 templateUrl : '@@cxt/component/widget/hamburger/template/hamburgerMenu.html',
@@ -27,10 +16,21 @@
 			 },
 			 'footer@' : {
 				 templateUrl : '@@cxt/component/widget/footer/template/footer.html',
-				/* controller : 'footerController',
-				 controllreAs : 'footerControllerVM'*/
 			 }
 			 
+		 },
+		 resolve : {
+			 spinnerEvent : function() {
+				 return {
+					 visible: false,
+		              show: function() {
+		                this.visible = true;
+		              },
+		              hide: function() {
+		                this.visible = false;
+		              }
+				 }
+			 } 
 		 }
 	 });
  });

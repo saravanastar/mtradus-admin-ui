@@ -1,0 +1,11 @@
+.spinner-background {
+	height: 100vh;
+	background : rgba(0, 0, 0, 0.5);
+	z-index : 99;
+	
+	.spinner-image {
+		top: 50vh;
+    	left: 50vw;
+    	position: absolute;
+	}
+}

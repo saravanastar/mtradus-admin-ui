@@ -4,15 +4,18 @@
 
 (function() {
 	
-	function loginController($scope, $rootScope) {
+	function loginController($scope, $rootScope, spinnerEvent, restClient) {
 		var loginControllerVM = this;
 		
 		loginControllerVM.onClickLogin =  function() {
-			
+			if (loginControllerVM.userName && loginControllerVM.password) {
+				
+			}
+			spinnerEvent.show();
 		}
 		
 		
 	}
 	angular.module("login").controller("loginController",['$scope',
-	             '$rootScope',loginController])
+	             '$rootScope', 'spinnerEvent', 'restClient',loginController])
 })();

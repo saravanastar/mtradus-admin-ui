@@ -8315,6 +8315,15 @@ h1 {
   font-weight: normal;
   margin: 2em auto 0px; }
 
+.spinner-background {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99; }
+  .spinner-background .spinner-image {
+    top: 50vh;
+    left: 50vw;
+    position: absolute; }
+
 .twoColumnFormBox {
   padding: 5px;
   border: 1px solid gray; }
