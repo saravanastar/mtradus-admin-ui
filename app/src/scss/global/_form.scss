@@ -1,0 +1,17 @@
+$color_1: #fff;
+$color_2: gray;
+$color_3: #1abc9d;
+$font-family_1: Arial;
+
+body {
+	margin: 0px;
+	padding: 0px;
+	/*background: #1abc9d;*/
+}
+h1 {
+	color: $color_1;
+	text-align: center;
+	font-family: $font-family_1;
+	font-weight: normal;
+	margin: 2em auto 0px;
+}

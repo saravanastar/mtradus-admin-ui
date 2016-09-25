@@ -3,18 +3,19 @@
 <head>
 	<title>Mathina Tradus</title>
 	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.cyan-light_blue.min.css">
 	<link href="/static/css/vendor.css" rel="stylesheet">
+	<link href="/static/css/app.css" rel="stylesheet">
 </head>
 <body ng-app="mtradus">
 	<div id="wrapper">
 	<div ui-view="topheader"></div>
 	<div style="width:100%">
-		<div class="navbar-default sidebar" ui-view="hamburger" style="width:30%;float:left"></div>
+		<div class="navbar-default sidebar" ui-view="hamburger"></div>
 		<div ui-view style="min-height: 860px;width:100%;float:left" id="page-wrapper"></div>
 	</div>
 	<div ui-view="footer" style="clear:both;width:100%"></div>

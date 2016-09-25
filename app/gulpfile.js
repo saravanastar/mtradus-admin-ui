@@ -55,7 +55,9 @@ var gulp     = require('gulp'),
 
   
   gulp.task('styles', function() {
-	  return gulp.src('src/scss/**/*.scss')
+	  return gulp.src(['src/scss/constants/*.scss','src/scss/external/*.scss',
+	                   'src/scss/global/*.scss','src/scss/pages/*.scss'])
+	  	.pipe(concat('app.css'))
 	    .pipe($.sass({ style: 'expanded', }))
 	    .pipe($.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
 	    .pipe(gulp.dest('dist/css'))
@@ -174,7 +176,7 @@ var gulp     = require('gulp'),
 	});
   
   gulp.task('build', function() {
-	  sequence('clean', ['copy:html', 'copy', 'libraries', 'scripts','fonts'], function() {
+	  sequence('clean', ['copy:html', 'copy', 'libraries', 'scripts','fonts', 'styles'], function() {
 	    console.log("Successfully Built!");
 	  });
 	});
@@ -182,6 +184,7 @@ var gulp     = require('gulp'),
   gulp.task('watch', function() {
     gulp.watch(['index.html','src/'+ '**/*.html'], ['copy:html']);
     gulp.watch(['src/bootstrap/**/*.js','src/config/**/*.js','src/component/**/*.js'], ['scripts']);
+    gulp.watch(['src/scss/**/*.scss'], ['styles']);
      
 });
   

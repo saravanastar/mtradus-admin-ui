@@ -1,0 +1,134 @@
+@CHARSET "ISO-8859-1";
+
+* {
+    box-sizing: border-box;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	overflow-x:hidden !important;
+	
+}
+h1 {
+	color: $color_1;
+	text-align: center;
+	font-family: $font-family_1;
+	font-weight: normal;
+	margin: 2em auto 0px;
+}
+
+input[type="text"] {
+	display: block;
+	width: 309px;
+	height: 35px;
+	margin: 15px auto;
+	background: #fff;
+	border: 0px;
+	padding: 1	5px;
+	font-size: 16px;
+	border: 2px solid #fff;
+	transition: all 0.3s ease;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 2px solid #1abc9d;
+}
+input[type="password"] {
+	display: block;
+	width: 309px;
+	height: 35px;
+	margin: 15px auto;
+	background: #fff;
+	border: 0px;
+	padding: 5px;
+	font-size: 16px;
+	border: 2px solid #fff;
+	transition: all 0.3s ease;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 2px solid #1abc9d;
+	&:focus {
+		border: 2px solid #1abc9d;
+	}
+}
+input[type="submit"] {
+	display: block;
+	background: #1abc9d;
+	width: 314px;
+	padding: 12px;
+	cursor: pointer;
+	color: $color_1;
+	border: 0px;
+	margin: auto;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	font-size: 17px;
+	transition: all 0.3s ease;
+	&:hover {
+		background: #09cca6;
+	}
+}
+a {
+
+	font-family: $font-family_1;
+	color: $color_2;
+	display: block;
+
+	text-decoration: none;
+	transition: all 0.3s ease;
+	font-size: 12px;
+	&:hover {
+		color: $color_3;
+	}
+}
+.green {
+	.background {
+		background:$color_3;
+	}
+}
+
+.text-xs-center {
+	text-align:center;
+}

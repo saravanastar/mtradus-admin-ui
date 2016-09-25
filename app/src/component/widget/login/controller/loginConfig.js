@@ -10,8 +10,8 @@
 			views : {
 				'@' : {
 					 templateUrl : '@@cxt/component/widget/login/template/login.html',
-					 /*controller : 'dashBoardController',
-					 controllerAs : 'dashBoardControllerVM'*/
+					 controller : 'loginController',
+					 controllerAs : 'loginControllerVM'
 				 }
 			}
 		});
