@@ -14,63 +14,63 @@
 		}
 
 		this.get = function(url, parameter) {
-			var promise = $q.defer();
+			var def = $q.defer();
 			config.method = 'GET';
 			config.url = url;
 			if (parameter) {
 				config.data = parameter;
 			}
 			$http(config).then(function(responseData) {
-				promise.resolve(responseData);
+				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				promise.reject(errorResponse);
+				def.reject(errorResponse);
 			});
-			return promise;
+			return def.promise;
 		}
 		
 		this.post = function(url, parameter) {
-			var promise = $q.defer();
+			var def = $q.defer();
 			config.method = 'POST';
 			config.url = url;
 			if (parameter) {
 				config.data = parameter;
 			}
 			$http(config).then(function(responseData) {
-				promise.resolve(responseData);
+				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				promise.reject(errorResponse);
+				def.reject(errorResponse);
 			});
-			return promise;
+			return def.promise;
 		}
 		
 		this.put = function(url, parameter) {
-			var promise = $q.defer();
+			var def = $q.defer();
 			config.method = 'put';
 			config.url = url;
 			if (parameter) {
 				config.data = parameter;
 			}
 			$http(config).then(function(responseData) {
-				promise.resolve(responseData);
+				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				promise.reject(errorResponse);
+				def.reject(errorResponse);
 			});
-			return promise;
+			return def.promise;
 		}
 		
 		this.callDelete = function(url, parameter) {
-			var promise = $q.defer();
+			var def = $q.defer();
 			config.method = 'delete';
 			config.url = url;
 			if (parameter) {
 				config.data = parameter;
 			}
 			$http(config).then(function(responseData) {
-				promise.resolve(responseData);
+				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				promise.reject(errorResponse);
+				def.reject(errorResponse);
 			});
-			return promise;
+			return def.promise;
 		}
 
 	}

@@ -1,6 +1,7 @@
 (function(){
  var app = angular.module("mtradus",['appUtils', 'menu','ui.router','login','dashBoard', 'topHeader']);
- app.config(function($stateProvider,$urlRouterProvider){
+ app.config(['$stateProvider', '$urlRouterProvider', '$httpProvider', function($stateProvider,$urlRouterProvider, $httpProvider){
+	 $httpProvider.interceptors.push('appHttpInterceptor');
 	 $stateProvider.state('app',{
 		 abstract :  true,
 		 views : {			 
@@ -30,11 +31,28 @@
 		                this.visible = false;
 		              }
 				 }
-			 } 
+			 },
+			 userObject : function(restClient) {
+				 return {
+					 user : null,
+					 getObject : function() {
+						 if (this.user == null) {
+							 restClient.get('/mtradus/service/user/login').then(function(responseData) {
+								 this.user = responseData;
+								 return this.user;
+							 })
+						 }
+						 
+					 },
+					 loadObject : function() {
+						 this.getObject();
+					 }
+				 }
+			 }
 		 }
 	 });
- });
+ }]);
 app.run(['$rootScope', '$state', '$stateParams', function ($rootScope,   $state, $stateParams) {
-    $state.go('app.login');
+    $state.go('app.dashboard');
 }]);
 })();

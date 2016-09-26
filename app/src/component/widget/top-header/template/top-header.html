@@ -9,6 +9,16 @@
         </button>
         <a class="navbar-brand" href="index.html">Mathina Tradus</a>
     </div>
+    <div>
+    	<section class="userProfile">
+    		Welcome {{topHeaderControllerVm.userObject.user.userName}} {{topHeaderControllerVm.userObject}}
+    		<i class="fa fa-sign-out" aria-hidden="true"></i>
+    	</section>
+    	<section class="userProfile" ng-if="!topHeaderControllerVm.userObject.user">
+    		<i class="fa fa-user" aria-hidden="true"></i>
+    	</section>
+    	
+    </div>
     <!-- /.navbar-header -->
    <!--  <header-notification></header-notification>
 

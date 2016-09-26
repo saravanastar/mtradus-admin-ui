@@ -8166,6 +8166,18 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .mdi-toggle-star:before {
   content: "\e8f5"; }
 
+body {
+  margin: 0px;
+  padding: 0px;
+  /*background: #1abc9d;*/ }
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-family: Arial;
+  font-weight: normal;
+  margin: 2em auto 0px; }
+
 @CHARSET "ISO-8859-1";
 * {
   box-sizing: border-box; }
@@ -8303,17 +8315,10 @@ a {
 .text-xs-center {
   text-align: center; }
 
-body {
-  margin: 0px;
-  padding: 0px;
-  /*background: #1abc9d;*/ }
-
-h1 {
-  color: #fff;
-  text-align: center;
-  font-family: Arial;
-  font-weight: normal;
-  margin: 2em auto 0px; }
+.userProfile {
+  color: black;
+  float: right;
+  padding-right: 1%; }
 
 .spinner-background {
   height: 100vh;
@@ -8323,6 +8328,29 @@ h1 {
     top: 50vh;
     left: 50vw;
     position: absolute; }
+
+.info, .success, .warning, .error, .validation {
+  border: 1px solid;
+  margin: 10px 0px;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center; }
+
+.info {
+  color: #00529B;
+  background-color: #BDE5F8; }
+
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF; }
+
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3; }
+
+.error {
+  color: #D8000C;
+  background-color: #FFBABA; }
 
 .twoColumnFormBox {
   padding: 5px;

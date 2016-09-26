@@ -37,6 +37,10 @@
 						class="form-control" ng-model="loginControllerVM.password"> <label for="form4">Your
 						password</label>
 				</div>
+				<div class="md-form" ng-if="loginControllerVM.isError">
+					
+					<div class="error"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>Username or password is wrong </div>
+				</div>
 
 				<div class="text-xs-center">
 					<button class="btn btn-deep-purple" ng-click="loginControllerVM.onClickLogin();">Login</button>
