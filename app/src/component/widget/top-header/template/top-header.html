@@ -7,18 +7,19 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+         <div>
+	    	<section class="userProfile" ng-class="{hide: !topHeaderControllerVm.userObject.userName}">
+	    		Welcome {{topHeaderControllerVm.userObject.userName}}
+	    		<i class="fa fa-sign-out" aria-hidden="true" ng-click="topHeaderControllerVm.logout()"></i>
+	    	</section>
+	    	<section class="userProfile" ng-class="{hide: topHeaderControllerVm.userObject.userName}">
+	    	
+	    		<i class="fa fa-user" aria-hidden="true" ng-click="topHeaderControllerVm.logIn()"></i>
+	    	</section>
+    	</div>
         <a class="navbar-brand" href="index.html">Mathina Tradus</a>
     </div>
-    <div>
-    	<section class="userProfile">
-    		Welcome {{topHeaderControllerVm.userObject.user.userName}} {{topHeaderControllerVm.userObject}}
-    		<i class="fa fa-sign-out" aria-hidden="true"></i>
-    	</section>
-    	<section class="userProfile" ng-if="!topHeaderControllerVm.userObject.user">
-    		<i class="fa fa-user" aria-hidden="true"></i>
-    	</section>
-    	
-    </div>
+  
     <!-- /.navbar-header -->
    <!--  <header-notification></header-notification>
 

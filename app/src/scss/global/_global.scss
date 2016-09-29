@@ -136,5 +136,11 @@ a {
 .userProfile {
 	color: black;
     float: right;
-    padding-right: 1%;
+    padding-right: 5%;
+    .fa {
+    	cursor:pointer;
+    }
+}
+.fa {
+	color:$color_3;
 }

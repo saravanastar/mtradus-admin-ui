@@ -1,0 +1,46 @@
+ <div class="row">
+	<div class="optionsRow">
+		<div class="column">
+			<header>Vendor</header>
+			<div class="formElement">	
+				<label for="vendorList"> Vendors: </label> 
+				<select name="vendorList"
+					id="vendorList"
+					ng-model="procurementControllerVM.selectedVendorOption" class="form-control">
+					<option ng-repeat="option in procurementControllerVM.vendorListObject"
+						value="{{option.vendorId}}">{{option.vendorName}}</option>
+				</select>
+				<div class="formOptions">
+					<i class="fa fa-pencil" aria-hidden="true"></i>
+					<i class="fa fa-times" aria-hidden="true"></i>
+					<i class="fa fa-plus" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<header>Product</header>
+			<div class="formElement">	
+				<label for="vendorList"> Vendors: </label> 
+				<select name="vendorList"
+					id="vendorList"
+					ng-model="procurementControllerVM.selectedVendorOption" class="form-control">
+					<option ng-repeat="option in procurementControllerVM.vendorListObject"
+						value="{{option.vendorId}}">{{option.vendorName}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="column">
+			<header>Category</header>
+			<div class="formElement">	
+				<label for="vendorList"> Vendors: </label> 
+				<select name="vendorList"
+					id="vendorList"
+					ng-model="procurementControllerVM.selectedVendorOption" class="form-control">
+					<option ng-repeat="option in procurementControllerVM.vendorListObject"
+						value="{{option.vendorId}}">{{option.vendorName}}</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</div>
+

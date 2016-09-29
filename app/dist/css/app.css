@@ -8318,7 +8318,12 @@ a {
 .userProfile {
   color: black;
   float: right;
-  padding-right: 1%; }
+  padding-right: 5%; }
+  .userProfile .fa {
+    cursor: pointer; }
+
+.fa {
+  color: #1abc9d; }
 
 .spinner-background {
   height: 100vh;
@@ -8387,3 +8392,36 @@ a {
 
 .card-block {
   padding: 1.25rem; }
+
+.optionsRow {
+  width: 100%;
+  padding: 2%; }
+  .optionsRow .column {
+    width: 25%;
+    float: left;
+    margin-left: 15px;
+    border: 2px solid #e8e8e8;
+    min-height: 500px; }
+    .optionsRow .column header {
+      font-weight: bold;
+      padding: 15px;
+      border-bottom: 1px solid #e8e8e8;
+      background: #1abc9d;
+      color: #fff; }
+    @media only screen and (max-width: 450px) {
+      .optionsRow .column {
+        width: 100%;
+        clear: both;
+        content: "";
+        min-height: 0px;
+        margin-left: 0px;
+        margin-top: 10px; } }
+    .optionsRow .column .formElement {
+      width: 100%;
+      clear: both;
+      padding: 10px; }
+      .optionsRow .column .formElement .formOptions {
+        float: right; }
+        .optionsRow .column .formElement .formOptions .fa {
+          margin: 2px;
+          cursor: pointer; }

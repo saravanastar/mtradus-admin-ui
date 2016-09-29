@@ -1,0 +1,40 @@
+.optionsRow {
+	width:100%;
+	padding:2%;
+	.column {
+		width:25%;
+		float:left;
+		margin-left : 15px;
+		border: 2px solid #e8e8e8;
+   		
+   		min-height:500px;
+		header {
+			font-weight : bold;
+			padding :15px;
+			border-bottom : 1px solid #e8e8e8;
+			background: $color_3;
+			color: $color_1;
+		}
+		@include respond-to(mobile) { 
+			width : 100%;
+			clear:both;
+			content : "";
+			min-height:0px;
+			margin-left : 0px;
+			margin-top : 10px;
+		}
+		
+		.formElement {
+			width:100%;
+			clear:both;
+			padding: 10px;
+			.formOptions {
+				float:right;
+				.fa {
+					margin:2px;
+					cursor:pointer;
+				}
+			}
+		}	
+	}
+}
