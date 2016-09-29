@@ -1,6 +1,22 @@
 .optionsRow {
 	width:100%;
 	padding:2%;
+	.overlay {
+		z-index: 101;
+	    background: black;
+	    position: absolute;
+	    height: 500px;
+	    opacity: 0.5;
+	    width: 23%;
+	    
+	    @include respond-to(mobile) { 
+			width: 88%;
+		    clear: both;
+		    content: "";
+		    height: 130px;
+		    margin-left: 0px;
+		}
+	}
 	.column {
 		width:25%;
 		float:left;
@@ -38,3 +54,4 @@
 		}	
 	}
 }
+

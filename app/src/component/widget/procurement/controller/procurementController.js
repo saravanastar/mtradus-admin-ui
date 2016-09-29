@@ -7,7 +7,14 @@
 		var procurementControllerVM = this;
 		
 		
-		procurementControllerVM.vendorListObject = null;
+		
+		function loadDefault() {
+			procurementControllerVM.showCategory = false;
+			procurementControllerVM.showProduct = false;
+			procurementControllerVM.vendorListObject = null;
+			procurementControllerVM.getVendorList();
+		}
+		
 		
 		
 		procurementControllerVM.getVendorList = function() {
@@ -21,7 +28,20 @@
 			});
 		}
 		
-		procurementControllerVM.getVendorList();
+		procurementControllerVM.editVendor = function() {
+			if(procurementControllerVM.selectedVendorOption) {
+				procurementControllerVM.showProduct = true;
+			}
+		};
+		procurementControllerVM.onVendorChange = function() {
+			if(procurementControllerVM.selectedVendorOption) {
+				procurementControllerVM.showProduct = true;
+			}
+		};
+		
+		
+		loadDefault();
+		
 		
 		
 

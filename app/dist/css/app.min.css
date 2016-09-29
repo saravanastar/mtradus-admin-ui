@@ -8396,6 +8396,20 @@ a {
 .optionsRow {
   width: 100%;
   padding: 2%; }
+  .optionsRow .overlay {
+    z-index: 101;
+    background: black;
+    position: absolute;
+    height: 500px;
+    opacity: 0.5;
+    width: 23%; }
+    @media only screen and (max-width: 450px) {
+      .optionsRow .overlay {
+        width: 88%;
+        clear: both;
+        content: "";
+        height: 130px;
+        margin-left: 0px; } }
   .optionsRow .column {
     width: 25%;
     float: left;
