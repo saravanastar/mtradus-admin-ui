@@ -1,0 +1,56 @@
+<div class="overlay" ng-class='{hide:showProduct}'></div>
+<header>Product</header>
+		<div class="formElement">	
+			<label for="productList"> Products: </label> 
+			<select name="productList"
+				id="productList"
+				ng-model="productControllerVM.selectedProductOption" class="form-control" ng-change="productControllerVM.onProductChange();">
+				<option ng-repeat="option in procureObject.vendor.productDetails"
+					value="{{option}}">{{option.productName}}</option>
+			</select>
+			<div class="formOptions">
+				<i class="fa fa-pencil" aria-hidden="true" ng-click="productControllerVM.editProduct()"></i>
+				<i class="fa fa-times" aria-hidden="true" ng-click="productControllerVM.deleteProductObject()"></i>
+				<i class="fa fa-plus" aria-hidden="true" ng-click="productControllerVM.addProduct()"></i>
+			</div>
+		</div>
+		
+		<div class="formElement">
+			<p ng-class="{hide:!productControllerVM.currentMode.product}">Action: {{productControllerVM.currentMode.product}}	</p>
+			<label for="productName"> Product Name: </label> 
+			<fieldset ng-disabled="productControllerVM.disableProductInputs">
+				<input type="text" name="productName" id="productName" class="form-control" ng-model="productControllerVM.productName"/>
+			
+			</fieldset>
+		</div>
+		<div class="formElement">	
+			<label for="productActive"> Active: </label> 
+			<fieldset ng-disabled="productControllerVM.disableProductInputs">
+				<input type="radio" name="productActive" id="productActive"  value=true ng-model="productControllerVM.productActive"/><label>Yes</label> 
+				 <input type="radio" name="vendorActive" id="vendorActive"  value=false ng-model="productControllerVM.productActive"/> <label>No</label>
+			</fieldset>
+		</div>
+		
+		<div class="formElement">	
+			<label for="productDescription"> Description: </label> 
+			<fieldset ng-disabled="productControllerVM.disableProductInputs">
+				<textarea rows="4" cols="50" class="form-control" ng-model="productControllerVM.productDescription"> 
+				</textarea>
+			</fieldset>
+		</div>
+		<div class="formElement info" ng-class='{hide:!productControllerVM.message.info}'>
+			<p><i class="fa fa-info" aria-hidden="true"></i>  {{productControllerVM.message.info}}</p>
+		</div>
+		<div class="formElement error" ng-class='{hide:!productControllerVM.message.error}'>
+			<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  {{productControllerVM.message.error}}</p>
+		</div>
+		<div class="formElement twoButtons" ng-class="{hide:!productControllerVM.currentMode.product}">	
+			<fieldset ng-disabled="productControllerVM.disableProductInputs">
+				<div class="button1" ng-click="productControllerVM.onProductSubmit()">
+					<i class="fa fa-check" aria-hidden="true" ></i>
+				</div>
+				<div class="button2" ng-click="productControllerVM.onProductCancel()">
+					<i class="fa fa-times" aria-hidden="true" ></i>
+				</div>
+			</fieldset>
+		</div>

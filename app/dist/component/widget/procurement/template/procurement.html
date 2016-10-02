@@ -1,34 +1,11 @@
  <div class="row">
 	<div class="optionsRow">
-		<div class="column">
-			<header>Vendor</header>
-			<div class="formElement">	
-				<label for="vendorList"> Vendors: </label> 
-				<select name="vendorList"
-					id="vendorList"
-					ng-model="procurementControllerVM.selectedVendorOption" class="form-control" ng-change="procurementControllerVM.onVendorChange();">
-					<option ng-repeat="option in procurementControllerVM.vendorListObject"
-						value="{{option}}">{{option.vendorName}}</option>
-				</select>
-				<div class="formOptions">
-					<i class="fa fa-pencil" aria-hidden="true" ng-click="procurementControllerVM.editVendor()"></i>
-					<i class="fa fa-times" aria-hidden="true" ng-click="procurementControllerVM.removeVendor()"></i>
-					<i class="fa fa-plus" aria-hidden="true" ng-click="procurementControllerVM.addVendor()"></i>
-				</div>
-			</div>
+		<div class="column" ui-view="vendor">
+		
+			
 		</div>
-		<div class="column">
-			<div class="overlay" ng-class='{hide:procurementControllerVM.showProduct}'></div>
-			<header>Product</header>
-			<div class="formElement">	
-				<label for="vendorList"> Vendors: </label> 
-				<select name="vendorList"
-					id="vendorList"
-					ng-model="procurementControllerVM.selectedVendorOption" class="form-control">
-					<option ng-repeat="option in procurementControllerVM.vendorListObject"
-						value="{{option.vendorId}}">{{option.vendorName}}</option>
-				</select>
-			</div>
+		<div class="column" ui-view="product">
+		
 		</div>
 		<div class="column">
 			<div class="overlay" ng-class='{hide:procurementControllerVM.showCategory}'></div>

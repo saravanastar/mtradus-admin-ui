@@ -4279,92 +4279,6 @@ textarea {
   overflow-wrap: break-word;
   padding-top: 1.2rem; }
 
-[type="radio"]:not(:checked), [type="radio"]:checked {
-  position: absolute;
-  left: -9999px;
-  visibility: hidden; }
-
-[type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  display: inline-block;
-  height: 25px;
-  line-height: 25px;
-  font-size: 1rem;
-  transition: 0.28s ease;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none; }
-
-[type="radio"] + label:before, [type="radio"] + label:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 4px;
-  width: 16px;
-  height: 16px;
-  z-index: 0;
-  transition: 0.28s ease; }
-
-[type="radio"]:not(:checked) + label:before {
-  border-radius: 50%;
-  border: 2px solid #5a5a5a; }
-
-[type="radio"]:not(:checked) + label:after {
-  border-radius: 50%;
-  border: 2px solid #5a5a5a;
-  z-index: -1;
-  -webkit-transform: scale(0);
-  transform: scale(0); }
-
-[type="radio"]:checked + label:before {
-  border-radius: 50%;
-  border: 2px solid transparent; }
-
-[type="radio"]:checked + label:after {
-  border-radius: 50%;
-  border: 2px solid #ff4081;
-  background-color: #ff4081;
-  z-index: 0;
-  -webkit-transform: scale(1.02);
-  transform: scale(1.02); }
-
-[type="radio"].with-gap:checked + label:before {
-  border-radius: 50%;
-  border: 2px solid #ff4081; }
-
-[type="radio"].with-gap:checked + label:after {
-  border-radius: 50%;
-  border: 2px solid #ff4081;
-  background-color: #ff4081;
-  z-index: 0;
-  -webkit-transform: scale(0.5);
-  transform: scale(0.5); }
-
-[type="radio"].with-gap:disabled:checked + label:before {
-  border: 2px solid rgba(0, 0, 0, 0.26); }
-
-[type="radio"].with-gap:disabled:checked + label:after {
-  border: none;
-  background-color: rgba(0, 0, 0, 0.26); }
-
-[type="radio"]:disabled:not(:checked) + label:before, [type="radio"]:disabled:checked + label:before {
-  background-color: transparent;
-  border-color: rgba(0, 0, 0, 0.26); }
-
-[type="radio"]:disabled + label {
-  color: rgba(0, 0, 0, 0.26); }
-
-[type="radio"]:disabled:not(:checked) + label:before {
-  border-color: rgba(0, 0, 0, 0.26); }
-
-[type="radio"]:disabled:checked + label:after {
-  background-color: rgba(0, 0, 0, 0.26);
-  border-color: #BDBDBD; }
-
 form p {
   margin-bottom: 10px;
   text-align: left; }
@@ -8250,9 +8164,8 @@ h1 {
 
 input[type="text"] {
   display: block;
-  width: 309px;
-  height: 35px;
-  margin: 15px auto;
+  width: 100%;
+  height: 25px;
   background: #fff;
   border: 0px;
   padding: 1	5px;
@@ -8262,13 +8175,16 @@ input[type="text"] {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border: 2px solid #1abc9d; }
+  border: 1px solid #1abc9d;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 13px; }
+  input[type="text"]:focus {
+    border: 2px solid #1abc9d; }
 
 input[type="password"] {
   display: block;
-  width: 309px;
-  height: 35px;
-  margin: 15px auto;
+  width: 100%;
+  height: 25px;
   background: #fff;
   border: 0px;
   padding: 5px;
@@ -8278,14 +8194,23 @@ input[type="password"] {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  border: 2px solid #1abc9d; }
+  border: 1px solid #1abc9d;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 13px; }
   input[type="password"]:focus {
     border: 2px solid #1abc9d; }
+
+input[type="radio"] {
+  width: 10%;
+  height: 12px;
+  border: 0px !important;
+  padding: 5px;
+  font-size: 16px; }
 
 input[type="submit"] {
   display: block;
   background: #1abc9d;
-  width: 314px;
+  width: 50%;
   padding: 12px;
   cursor: pointer;
   color: #fff;
@@ -8316,7 +8241,7 @@ a {
   text-align: center; }
 
 .userProfile {
-  color: black;
+  color: #777;
   float: right;
   padding-right: 5%; }
   .userProfile .fa {
@@ -8324,6 +8249,24 @@ a {
 
 .fa {
   color: #1abc9d; }
+
+.error {
+  background: #EFD2D2; }
+  .error .fa {
+    color: #8B0000; }
+  .error p {
+    color: #8B0000;
+    font-size: 10px;
+    text-align: center; }
+
+.info {
+  background: #BFF6ED; }
+  .info .fa {
+    color: #1abc9d; }
+  .info p {
+    color: #1abc9d;
+    font-size: 10px;
+    text-align: center; }
 
 .spinner-background {
   height: 100vh;
@@ -8381,14 +8324,23 @@ a {
   position: relative; }
   .md-form .btn {
     margin-bottom: 1.5rem; }
+  .md-form input[type="text"] {
+    margin-left: 43px;
+    padding-left: 20px;
+    width: 80%;
+    margin-top: 20px;
+    height: 35px; }
+  .md-form input[type="password"] {
+    margin-left: 43px;
+    padding-left: 20px;
+    width: 80%;
+    margin-top: 20px;
+    height: 25px; }
   .md-form .prefix {
     position: absolute;
     width: 3rem;
     font-size: 2rem;
     transition: color .2s; }
-    @media only screen and (max-width: 768px) {
-      .md-form .prefix {
-        font-size: 0rem; } }
 
 .card-block {
   padding: 1.25rem; }
@@ -8433,7 +8385,31 @@ a {
     .optionsRow .column .formElement {
       width: 100%;
       clear: both;
-      padding: 10px; }
+      padding-left: 10px;
+      padding-right: 10px; }
+      .optionsRow .column .formElement.error {
+        width: 90%;
+        margin: 10px; }
+      .optionsRow .column .formElement.info {
+        width: 90%;
+        margin: 10px;
+        border: 1px solid #1abc9d; }
+      .optionsRow .column .formElement fieldset {
+        border: none;
+        margin: none;
+        padding: none; }
+      .optionsRow .column .formElement.twoButtons {
+        padding: 10px;
+        margin: 2px; }
+        .optionsRow .column .formElement.twoButtons .button1, .optionsRow .column .formElement.twoButtons .button2 {
+          background: #1abc9d;
+          margin-left: 1%;
+          width: 48%;
+          float: left;
+          cursor: pointer;
+          text-align: center; }
+          .optionsRow .column .formElement.twoButtons .button1 .fa, .optionsRow .column .formElement.twoButtons .button2 .fa {
+            color: #fff; }
       .optionsRow .column .formElement .formOptions {
         float: right; }
         .optionsRow .column .formElement .formOptions .fa {

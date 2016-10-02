@@ -33,6 +33,20 @@
 	.btn {
 		margin-bottom: 1.5rem;
 	}
+	input[type="text"] {
+		margin-left: 43px;
+	    padding-left: 20px;
+	    width: 80%;
+	    margin-top: 20px;
+	    height: 35px;
+	}
+	input[type="password"] {
+		margin-left: 43px;
+	    padding-left: 20px;
+	    width: 80%;
+	    margin-top: 20px;
+	    height: 25px;
+	}
 	.prefix {
 		position: absolute;
 	    width: 3rem;
@@ -42,9 +56,7 @@
 	    -o-transition: color .2s;
 	    -ms-transition: color .2s;
 	    transition: color .2s;
-	    @media only screen and (max-width: 768px) {
-	    	font-size: 0rem;
-	    }
+	   
 	}
 }
 .card-block {

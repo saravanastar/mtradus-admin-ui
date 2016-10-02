@@ -43,7 +43,40 @@
 		.formElement {
 			width:100%;
 			clear:both;
-			padding: 10px;
+			padding-left: 10px;
+			padding-right: 10px;
+			&.error{
+				width: 90%;
+    			margin: 10px;
+			}
+			&.info{
+				width: 90%;
+    			margin: 10px;
+    			border: 1px solid $color_3;
+			}
+			fieldset {
+				border: none; 
+   				margin: none; 
+     			padding: none;
+			}
+			&.twoButtons {
+				padding:10px;
+				margin : 2px;
+				.button1 {
+					background:$color_3;
+					margin-left:1%;
+					width:48%;
+					float:left;
+					cursor:pointer;
+					text-align:center;
+					.fa {
+						color:$color_1;
+					}
+				}
+				.button2 {
+					@extend .button1;
+				}
+			}
 			.formOptions {
 				float:right;
 				.fa {
@@ -54,4 +87,5 @@
 		}	
 	}
 }
+
 

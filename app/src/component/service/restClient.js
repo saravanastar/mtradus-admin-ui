@@ -23,7 +23,7 @@
 			$http(config).then(function(responseData) {
 				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				def.reject(errorResponse);
+				def.reject(errorResponse.data);
 			});
 			return def.promise;
 		}
@@ -38,7 +38,7 @@
 			$http(config).then(function(responseData) {
 				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				def.reject(errorResponse);
+				def.reject(errorResponse.data);
 			});
 			return def.promise;
 		}
@@ -53,7 +53,7 @@
 			$http(config).then(function(responseData) {
 				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				def.reject(errorResponse);
+				def.reject(errorResponse.data);
 			});
 			return def.promise;
 		}
@@ -68,7 +68,7 @@
 			$http(config).then(function(responseData) {
 				def.resolve(responseData.data);
 			}, function(errorResponse) {
-				def.reject(errorResponse);
+				def.reject(errorResponse.data);
 			});
 			return def.promise;
 		}
