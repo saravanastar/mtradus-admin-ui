@@ -171,7 +171,7 @@
 		productControllerVM.loadCategoryByProductId = function() {
 			
 			restClient.get(config.apiUrl + 'data/category/product/'+$scope.procureObject.product.productId).then(function(responseData) {
-				$scope.procureObject.product.productCategoryDetails = responseData;
+				$scope.$parent.procureObject.product.productCategoryDetails = responseData;
 			}, function(errorData) {
 				
 			})

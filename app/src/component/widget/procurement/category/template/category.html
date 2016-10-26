@@ -1,0 +1,42 @@
+<div class="overlay" ng-class='{hide:showCategory}'></div>
+<header>Category</header>
+		<div class="formElement">	
+			<label for="categoryList"> Category: </label> 
+			<select name="categoryList"
+				id="categoryList"
+				ng-model="categoryControllerVM.selectedCategoryOption" class="form-control" ng-change="categoryControllerVM.onCategoryChange();">
+				<option ng-repeat="option in procureObject.product.productCategoryDetails"
+					value="{{option}}">{{option.categoryName}}</option>
+			</select>
+			<div class="formOptions">
+				<i class="fa fa-pencil" aria-hidden="true" ng-click="categoryControllerVM.editCategory()"></i>
+				<i class="fa fa-times" aria-hidden="true" ng-click="categoryControllerVM.deleteCategoryObject()"></i>
+				<i class="fa fa-plus" aria-hidden="true" ng-click="categoryControllerVM.addCategory()"></i>
+			</div>
+		</div>
+		
+		<div class="formElement">
+			<p ng-class="{hide:!categoryControllerVM.currentMode.category}">Action: {{categoryControllerVM.currentMode.category}}	</p>
+			<label for="categoryName"> category Name: </label> 
+			<fieldset ng-disabled="categoryControllerVM.disableCategoryInputs">
+				<input type="text" name="categoryName" id="categoryName" class="form-control" ng-model="categoryControllerVM.categoryName"/>
+			
+			</fieldset>
+		</div>
+		
+		<div class="formElement info" ng-class='{hide:!categoryControllerVM.message.info}'>
+			<p><i class="fa fa-info" aria-hidden="true"></i>  {{categoryControllerVM.message.info}}</p>
+		</div>
+		<div class="formElement error" ng-class='{hide:!categoryControllerVM.message.error}'>
+			<p><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>  {{categoryControllerVM.message.error}}</p>
+		</div>
+		<div class="formElement twoButtons" ng-class="{hide:!categoryControllerVM.currentMode.category}">	
+			<fieldset ng-disabled="categoryControllerVM.enablecategoryInputs">
+				<div class="button1" ng-click="categoryControllerVM.onCategorySubmit()">
+					<i class="fa fa-check" aria-hidden="true" ></i>
+				</div>
+				<div class="button2" ng-click="categoryControllerVM.onCategoryCancel()">
+					<i class="fa fa-times" aria-hidden="true" ></i>
+				</div>
+			</fieldset>
+		</div>

@@ -22,15 +22,20 @@
 					templateUrl : '@@cxt/component/widget/procurement/product/template/product.html',
 					controller : 'productController',
 					controllerAs: 'productControllerVM'
-				}/*,
+				},
 				'category@app.procurement' : {
 					templateUrl : '@@cxt/component/widget/procurement/category/template/category.html',
 					controller : 'categoryController',
 					controllerAs: 'categoryControllerVM'
-				}*/
+				},
+				'item@app.procurement' : {
+					templateUrl : '@@cxt/component/widget/procurement/item/template/item.html',
+					controller : 'itemController',
+					controllerAs: 'itemControllerVM'
+				}
 			}
 		});
 	}
-	angular.module('procurement',['ui.router', 'vendor', 'product']);
+	angular.module('procurement',['ui.router', 'vendor', 'product','category', 'item']);
 	angular.module('procurement').config(['$stateProvider',stateConfig]);
 })();

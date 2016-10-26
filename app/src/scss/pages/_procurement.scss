@@ -88,4 +88,20 @@
 	}
 }
 
+.row {
+	
+	width:100%;
+	float:left;
+	margin-left : 15px;
+	border: 2px solid #e8e8e8;
+
+	header {
+		font-weight : bold;
+		padding :15px;
+		border-bottom : 1px solid #e8e8e8;
+		background: $color_3;
+		color: $color_1;
+	}
+}
+
 

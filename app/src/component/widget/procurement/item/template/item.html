@@ -1,0 +1,17 @@
+<div class="overlay" ng-class='{hide:showItem}'></div>
+<header>Item</header>
+
+<div class="formElement">	
+	<label for="itemList"> Items: </label> 
+	<select name="itemList"
+		id="itemList"
+		ng-model="itemControllerVM.selectedItem" class="form-control" ng-change="categoryControllerVM.onCategoryChange();">
+		<option ng-repeat="option in procureObject.product.productCategoryDetails"
+			value="{{option}}">{{option.categoryName}}</option>
+	</select>
+	<div class="formOptions">
+		<i class="fa fa-pencil" aria-hidden="true" ng-click="categoryControllerVM.editCategory()"></i>
+		<i class="fa fa-times" aria-hidden="true" ng-click="categoryControllerVM.deleteCategoryObject()"></i>
+		<i class="fa fa-plus" aria-hidden="true" ng-click="categoryControllerVM.addCategory()"></i>
+	</div>
+</div>
